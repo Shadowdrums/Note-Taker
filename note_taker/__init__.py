@@ -1,0 +1,1 @@
+from .note_taker import NoteTaker

@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "note-taker"
+version = "0.1.0"
+description = "A lightweight module for taking notes in a straightforward and direct manor via command line interface"
+authors = ["Your Name <you@example.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "note_taker"}]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+appdirs = "^1.4.4"
+poetry = "^1.4.2"
+
+[tool.poetry.group.dev.dependencies]
+twine = "^4.0.2"
+build = "^0.10.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
