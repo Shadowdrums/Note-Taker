@@ -8,7 +8,7 @@ A simple command-line tool for creating, viewing, and deleting notes, as well as
 Python 3.x
 requests module (for caching data)
 ## Installation
-Clone the repository: git clone https://github.com/your-username/note-taker.git
+Clone the repository: git clone https://github.com/Shadowdrums/Note-Taker.git
 Navigate to the project directory: cd note-taker
 Install requests module: pip install requests
 ## Usage
@@ -34,3 +34,5 @@ Enter the URL of the data you want to cache
 The data will be downloaded and saved as a binary file with a .bin extension in the current directory.
 ## Contributing
 Contributions are welcome! Please submit a pull request if you have any suggestions or improvements.
+## Notes
+Your notes can only be read using the programs console, any .txt it saves will be encrypted.
