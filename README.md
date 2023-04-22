@@ -24,13 +24,13 @@ Quit the program
 ## Creating a new note
 Enter a title for the note
 Enter the content for the note
-The note will be saved as a binary file with a .bin extension in the appdata/local directory.
+The note will be saved as a binary file with a .bin extension in the appdata/local/shadownote/note-taker directory.
 Viewing an existing note
 Enter the title of the note you want to view
 The content of the note will be displayed in the console
 ## Deleting an existing note
 Enter the title of the note you want to delete
-The note will be deleted from the appdata/local/shaodwnote/note-taker directory
+The note will be deleted from the appdata/local/shadownote/note-taker directory
 ## Caching data from a URL
 Enter the URL of the data you want to cache
 The data will be downloaded and saved as a binary file with a .bin extension in the current directory.
