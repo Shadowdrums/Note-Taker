@@ -8,7 +8,7 @@ from cryptography.fernet import Fernet
 
 class NoteTaker:
     def __init__(self):
-        self.appdata_dir = appdirs.user_data_dir("note-taker", "shadowdrums")
+        self.appdata_dir = appdirs.user_data_dir("note-taker", "shadownotes")
         if not os.path.isdir(os.path.split(self.appdata_dir)[0]):
             os.mkdir(os.path.split(self.appdata_dir)[0])
         if not os.path.isdir(self.appdata_dir):
