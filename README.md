@@ -30,7 +30,7 @@ Enter the title of the note you want to view
 The content of the note will be displayed in the console
 ## Deleting an existing note
 Enter the title of the note you want to delete
-The note will be deleted from the current directory
+The note will be deleted from the appdata/local/shaodwnote/note-taker directory
 ## Caching data from a URL
 Enter the URL of the data you want to cache
 The data will be downloaded and saved as a binary file with a .bin extension in the current directory.
