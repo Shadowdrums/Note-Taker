@@ -7,10 +7,12 @@ A simple command-line tool for creating, viewing, and deleting notes, as well as
 ## Requirements
 Python 3.x
 requests module (for caching data)
+cryptography module (for encrypting notes)
 ## Installation
 Clone the repository: git clone https://github.com/Shadowdrums/Note-Taker.git
 Navigate to the project directory: cd note-taker
 Install requests module: pip install requests
+Install cryptography module: pip install cryptography
 ## Usage
 Run the program: python note-taker.py
 Select an option from the menu:
@@ -22,7 +24,7 @@ Quit the program
 ## Creating a new note
 Enter a title for the note
 Enter the content for the note
-The note will be saved as a binary file with a .bin extension in the current directory.
+The note will be saved as a binary file with a .bin extension in the appdata/local directory.
 Viewing an existing note
 Enter the title of the note you want to view
 The content of the note will be displayed in the console
@@ -35,4 +37,4 @@ The data will be downloaded and saved as a binary file with a .bin extension in 
 ## Contributing
 Contributions are welcome! Please submit a pull request if you have any suggestions or improvements.
 ## Notes
-Your notes can only be read using the programs console, any .txt it saves will be encrypted.
+Your notes can only be read using the programs console, any .bin it saves will be encrypted.
