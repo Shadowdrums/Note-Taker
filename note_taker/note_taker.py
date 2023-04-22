@@ -3,6 +3,8 @@ import webbrowser
 import requests
 import appdirs
 from time import sleep
+from cryptography.fernet import Fernet
+
 
 class NoteTaker:
     def __init__(self):
@@ -11,6 +13,15 @@ class NoteTaker:
             os.mkdir(os.path.split(self.appdata_dir)[0])
         if not os.path.isdir(self.appdata_dir):
             os.mkdir(self.appdata_dir)
+
+        self.key_file_path = os.path.join(self.appdata_dir, "key.bin")
+        if os.path.isfile(self.key_file_path):
+            with open(self.key_file_path, "rb") as file:
+                self.key = file.read()
+        else:
+            self.key = Fernet.generate_key()
+            with open(self.key_file_path, "wb") as file:
+                file.write(self.key)
 
     def build_notes_path(self, filename):
         """Return the absolute path of a note file."""
@@ -38,8 +49,10 @@ class NoteTaker:
         """Create a new note."""
         title = input("Enter note title: ")
         content = input("Enter note content: ")
+        f = Fernet(self.key)
+        encrypted_content = f.encrypt(content.encode("utf-8"))
         with open(self.build_notes_path(f"{title}.bin"), "wb") as file:
-            file.write(content.encode('utf-8'))
+            file.write(encrypted_content)
         print(f"Note '{title}' has been created.")
 
     def view_note(self):
@@ -47,7 +60,9 @@ class NoteTaker:
         title = input("Enter note title: ")
         try:
             with open(self.build_notes_path(f"{title}.bin"), "rb") as file:
-                content = file.read().decode('utf-8')
+                encrypted_content = file.read()
+                f = Fernet(self.key)
+                content = f.decrypt(encrypted_content).decode("utf-8")
                 print(f"Note '{title}':\n{content}")
         except FileNotFoundError:
             print(f"Note '{title}' does not exist.")
